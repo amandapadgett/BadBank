@@ -14,14 +14,14 @@ function Deposit() {
     console.log(ctx);
 
 
-    // function validate(number) {
-    //     if(isNaN(number) ) {
-    //         alert('Please enter a valid number')
-    //         setStatus('Please enter a valid number')
-    //         return false;
-    //     }
-    //     return true;
-    // }
+    function validate(number) {
+        if(isNaN(number) ) {
+            alert('Please enter a valid number')
+            setStatus('Please enter a valid number')
+            return false;
+        }
+        return true;
+    }
 
     function negativeNum(num){
         if(num <=0) {
@@ -31,16 +31,14 @@ function Deposit() {
         return true;
     }
 
-    function handleDeposit() {
-        console.log(deposit);
-        if(!negativeNum(deposit)) return;
-        balance += deposit;
-        ctx.users.deposits.push(deposit);
-        ctx.users.balance = balance;
-        alert(`Successfully deposited ${deposit}. New balance is ${balance}`);    
+    function handleDeposit(amount) {
+        console.log(amount);
+        if(!negativeNum(amount) && (!validate(amount))) return;
+        setBalance(balance + amount);
+        setStatus('');    
         setShow(false);
-        
-        console.log(ctx.users.balance, deposit)
+        ctx.users[ctx.users.length - 1].balance += amount;
+        console.log(ctx.users.balance)
     }
     
     // function handleSubmit(e) {
@@ -61,12 +59,12 @@ function Deposit() {
         <Card 
          bgcolor="success"
          txtcolor="white"
-         header="Deposit"
+         header="Deposits"
          title="Make a Deposit"
         body={show ?  <> 
-            Current Balance: ${balance} 
-            {/* <label readOnly={false}  onChange={e => setBalance(e.currentTarget.value)}></label> <br/> */}
-        <br/>
+            <h5>Welcome</h5>
+            {/* Current Balance: ${ctx.user[ctx.users.length - 1].balance}  */}
+            
       <br/>
         <input 
             type="input" 
@@ -78,14 +76,16 @@ function Deposit() {
             <button 
             type="submit" 
             className="btn btn-light" 
-            disabled={isNaN(deposit)}
-            onClick={handleDeposit} >Submit Deposit</button>
+            onClick={() => handleDeposit(deposit)} >Submit Deposit</button>
         
         </>  :  <>
         <h5>Deposit was successful!</h5>
-        Current Balance: ${ctx.users[0].balance}
+        <h6> Current Balance: ${ctx.users[ctx.users.length - 1].balance}</h6>
         <br />
-        <button type="submit" className="btn btn-light" onClick={clearForm}>Make another deposit</button>
+        <button 
+        type="submit" 
+        className="btn btn-light" 
+        onClick={clearForm} > Make another deposit</button>
         </>
         }
         />

@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar/>
-        <UserContext.Provider value={{users:[{name:'amanda',email:'amanda@padgett.edu', password:'secret', balance:0}]}}>
+        <UserContext.Provider value={{users:[{name:'amanda',email:'amanda@padgett.edu', password:'secret123', balance:500}]}}>
          <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/withdraw' element={ <Withdraw /> } />

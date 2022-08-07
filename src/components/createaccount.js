@@ -46,7 +46,8 @@ function CreateAccount() {
         if (!checkPassword(password, 'password')){  
             return;
         };
-       ctx.users.push({name, email, password, balance: 0});
+
+       ctx.users.push({name, email, password, balance: 500});
        setShow(false);  
         
     }
@@ -64,7 +65,7 @@ function CreateAccount() {
              bgcolor="primary"
              txtcolor="white"
              header="Create Account"
-             title="Complete fields to create account."
+             title="Complete fields to a new create account"
              status={status}
              body={show ? (<>
     
@@ -96,7 +97,11 @@ function CreateAccount() {
                 ) : (
                 <>
                 <h5>Success!</h5>
-                <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+                <button 
+                type="submit" 
+                className="btn btn-light" onClick={clearForm}
+                disabled={name === "" && email === "" && password === ""}
+                >Add another account</button>
                 </>
                 )}
             
