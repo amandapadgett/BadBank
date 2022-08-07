@@ -36,7 +36,7 @@ function NavBar() {
                     <NavLink to="/deposit/" style={navLinkStyles} className="nav-link">Deposit</NavLink><span>Make a Deposit</span>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/withdraw/" style={navLinkStyles}>Withdraw</NavLink><span>Withdraw money</span>
+                    <NavLink className="nav-link" to="/withdraw/" style={navLinkStyles}>Withdraw</NavLink><span>Make a Withdrawal</span>
                 </li>
                 {/* <li className="nav-item">
                 <NavLink style={navLinkStyles} className="nav-link" to="/login/"><span>Login to your account at Bad Bank account.</span>Login</NavLink>
