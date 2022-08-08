@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from './context';
 import { useState } from 'react';
-import UserContext from './context';
-
+import { UserContext }from './context';
 
 function Deposit() {
     const [deposit, setDeposit] = useState('');
@@ -10,9 +9,9 @@ function Deposit() {
     const [show, setShow] = useState(true);
     const [status, setStatus] = useState('');
     const ctx = React.useContext(UserContext);
-
+    let data = JSON.stringify(ctx.users[0].balance);
+    console.log(data);
     console.log(ctx);
-
 
     function validate(number) {
         if(isNaN(number) ) {
@@ -34,22 +33,12 @@ function Deposit() {
     function handleDeposit(amount) {
         console.log(amount);
         if(!negativeNum(amount) && (!validate(amount))) return;
-        setBalance(balance + amount);
+        setBalance(data + amount);
         setStatus('');    
         setShow(false);
-        ctx.users[ctx.users.length - 1].balance += amount;
+        ctx.users[0].balance += amount;
         console.log(ctx.users.balance)
     }
-    
-    // function handleSubmit(e) {
-    //     console.log(deposit);
-    //     balance += deposit;
-    //     setDeposit(balance);
-    //     e.preventDefault();
-    //     setStatus(`Deposit of ${deposit} was successful. New balance is: ${balance}`);
-    //     alert("Deposit was successful")
-    // }
-
     function clearForm() {
         setDeposit('');
         setShow(true);
@@ -63,7 +52,7 @@ function Deposit() {
          title="Make a Deposit"
         body={show ?  <> 
             <h5>Welcome</h5>
-            {/* Current Balance: ${ctx.user[ctx.users.length - 1].balance}  */}
+            Current Balance: ${data} ;
             
       <br/>
         <input 
@@ -80,7 +69,7 @@ function Deposit() {
         
         </>  :  <>
         <h5>Deposit was successful!</h5>
-        <h6> Current Balance: ${ctx.users[ctx.users.length - 1].balance}</h6>
+        <h6> Current Balance: ${parseInt(data)}</h6>
         <br />
         <button 
         type="submit" 
@@ -91,7 +80,14 @@ function Deposit() {
         />
      );
 }
-
-
-
 export default Deposit 
+
+  
+    // function handleSubmit(e) {
+    //     console.log(deposit);
+    //     balance += deposit;
+    //     setDeposit(balance);
+    //     e.preventDefault();
+    //     setStatus(`Deposit of ${deposit} was successful. New balance is: ${balance}`);
+    //     alert("Deposit was successful")
+    // }
