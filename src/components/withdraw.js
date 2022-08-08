@@ -9,7 +9,7 @@ function Withdraw() {
 
     const [show, setShow] = useState(true);
     const [status, setStatus] = useState('');
-    const [withdraw, setWithdraw] = useState(0);
+    const [withdraw, setWithdraw] = useState('');
     const ctx = useContext(UserContext);
 
      function validate(number) {
@@ -55,7 +55,11 @@ function Withdraw() {
                 value={withdraw}
                 onChange={e => setWithdraw(e.currentTarget.value)} />
                 <br/>
-                <button type="submit" className="btn btn-light" onClick={handleWithdrawal}>Withdraw</button>
+                <button 
+                type="submit"
+                className="btn btn-light"
+                disabled={withdraw === '' || withdraw < 0}
+                onClick={handleWithdrawal}>Withdraw</button>
                 </>
             ) : (
                 <>
