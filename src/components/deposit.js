@@ -23,22 +23,27 @@ function Deposit() {
     }
 
     function negativeNum(num){
-        if(num <=0) {
+        if(num < 0) {
             alert('Deposit amount cannot be negative')
             return false;
+            
         }
         return true;
     }
 
     function handleDeposit(amount) {
         console.log(amount);
-        if(!negativeNum(amount) && (!validate(amount))) return;
+        if(!negativeNum(amount) || (!validate(amount)))
+        return;
         setBalance(data + amount);
         setStatus('');    
-        setShow(false);
-        ctx.users[0].balance += amount;
+        
+        ctx.users[0].balance += Number(amount);
         console.log(ctx.users.balance)
+        setShow(false);
+                
     }
+
     function clearForm() {
         setDeposit('');
         setShow(true);
@@ -52,7 +57,7 @@ function Deposit() {
          title="Make a Deposit"
         body={show ?  <> 
             <h5>Welcome</h5>
-            Current Balance: ${data} ;
+            Current Balance: ${data}
             
       <br/>
         <input 
@@ -65,11 +70,12 @@ function Deposit() {
             <button 
             type="submit" 
             className="btn btn-light" 
+            disabled={deposit === '' || deposit === 0}
             onClick={() => handleDeposit(deposit)} >Submit Deposit</button>
         
         </>  :  <>
         <h5>Deposit was successful!</h5>
-        <h6> Current Balance: ${parseInt(data)}</h6>
+        <h6> Current Balance: ${Number(data)}</h6>
         <br />
         <button 
         type="submit" 

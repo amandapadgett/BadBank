@@ -92,7 +92,11 @@ function CreateAccount() {
                 placeholder="Enter password"
                 value={password}
                 onChange={e => setPassword(e.currentTarget.value)} /> <br/>
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                <button 
+                type="submit" 
+                className="btn btn-light" 
+                disabled={name === "" && email === "" && password === ""}
+                onClick={handleCreate}>Create Account</button>
                 </>
                 ) : (
                 <>

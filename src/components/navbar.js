@@ -27,7 +27,7 @@ function NavBar() {
                 <NavLink  to='/' style={navLinkStyles} className="nav-link" aria-current="page"> Home </NavLink><span>Return Home</span>
                 </li>
                 <li className="nav-item">
-                    <NavLink to='/createaccount/' style={navLinkStyles} className="nav-link" >Create Account</NavLink><span>Create new account</span>
+                    <NavLink to='/createaccount/' style={navLinkStyles} className="nav-link" >Create Account</NavLink><span>Create New Account</span>
                 </li>
                 <li className="nav-item">
                     <NavLink to="/alldata/" style={navLinkStyles} data-toggle="tooltip" data-placement="bottom" data-title="See BadBank Data" className="nav-link">All Data</NavLink><span>View AllData</span>
