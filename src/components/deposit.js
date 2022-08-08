@@ -88,11 +88,3 @@ function Deposit() {
 export default Deposit 
 
   
-    // function handleSubmit(e) {
-    //     console.log(deposit);
-    //     balance += deposit;
-    //     setDeposit(balance);
-    //     e.preventDefault();
-    //     setStatus(`Deposit of ${deposit} was successful. New balance is: ${balance}`);
-    //     alert("Deposit was successful")
-    // }
