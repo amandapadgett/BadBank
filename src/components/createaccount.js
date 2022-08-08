@@ -47,7 +47,7 @@ function CreateAccount() {
             return;
         };
 
-       ctx.users.push({name, email, password, balance: 500});
+       ctx.users.push({name, email, password, balance: 0});
        setShow(false);  
         
     }

@@ -9,7 +9,7 @@ function Deposit() {
     const [show, setShow] = useState(true);
     const [status, setStatus] = useState('');
     const ctx = React.useContext(UserContext);
-    let data = JSON.stringify(ctx.users[0].balance);
+    let data = JSON.stringify(ctx.users[ctx.users.length-1].balance);
     console.log(data);
     console.log(ctx);
 
@@ -38,7 +38,7 @@ function Deposit() {
         setBalance(data + amount);
         setStatus('');    
         
-        ctx.users[0].balance += Number(amount);
+        ctx.users[ctx.users.length - 1].balance += Number(amount);
         console.log(ctx.users.balance)
         setShow(false);
                 
@@ -56,15 +56,14 @@ function Deposit() {
          header="Deposits"
          title="Make a Deposit"
         body={show ?  <> 
-            <h5>Welcome</h5>
-            Current Balance: ${data}
+            Current Balance: ${data} <br />
             
       <br/>
         <input 
             type="input" 
             className="form-control" 
             id="deposit" 
-            placeholder="Enter Deposit Amount"
+            placeholder="Enter Amount"
             value={deposit}
             onChange={e => setDeposit(e.currentTarget.value)} /> <br/>
             <button 

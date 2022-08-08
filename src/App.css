@@ -3,7 +3,7 @@ body {
   color: #555;
   margin-top: 10px;
   font-size: 16px;
-  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .navbar-nav li {
@@ -39,6 +39,7 @@ body {
   margin-bottom: 50px;
   font-size: 18px;
   font-weight: 500;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .card {
@@ -48,6 +49,11 @@ body {
   margin-left: 60px;
   text-align: center;
 }
+
+.card-header {
+  font-size: 20px;
+}
+
 
 .bg-primary {
   background-color: #d61977dd!important;
@@ -74,5 +80,15 @@ body {
   letter-spacing: 3px;
   color: #ff0d0d;
   font-weight: bold;
+}
+
+.table {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+  text-align: center;
+  width: 600px;
+  border: 3px solid rgb(123, 203, 107);
 }
 
