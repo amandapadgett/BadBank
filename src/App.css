@@ -1,7 +1,7 @@
 body {
   background-color: #e3ead2;
   color: #555;
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 16px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .bg-secondary {
-  background-color: #4f6aa8!important;
+  background-color: #7b71ad!important;
 }
 
 .nav-link .navToolTip {
@@ -89,6 +89,6 @@ body {
   margin-left: 60px;
   text-align: center;
   width: 600px;
-  border: 3px solid rgb(123, 203, 107);
+  border: 5px solid rgb(140, 199, 98);
 }
 

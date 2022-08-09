@@ -16,7 +16,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid" >
         
-            <a className="navbar-brand" href="/"> BadBank</a>
+            <NavLink className="navbar-brand" to="/"> BadBank</NavLink>
                 <button 
                 className="navbar-toggler" 
                 type="button" 

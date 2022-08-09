@@ -10,7 +10,7 @@ function Home() {
          txtcolor="white"
          header="BadBank"
          title="WELCOME TO A VERY BAD BANK"
-         text="For all your unsecure banking needs."
+         text="We are here for all your unsecure banking needs."
          body={(<img src={BankPicWhite} style={{ padding: '20px'}} className="img-fluid" alt="banking graphic" />)}
         />
      );

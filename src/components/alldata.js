@@ -20,7 +20,7 @@ function AllData() {
     )
 
     return (
-        <div>
+       <div>
             <table className="table table-striped">
             <thead>
                 <tr>
