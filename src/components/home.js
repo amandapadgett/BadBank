@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './context';
 import BankPic from './bank.png';
+import BankPicWhite from './bank_white.png'
 
 function Home() {
     return (
@@ -10,7 +11,7 @@ function Home() {
          header="BadBank"
          title="WELCOME TO A VERY BAD BANK"
          text="For all your unsecure banking needs."
-         body={(<img src={BankPic} style={{ padding: '20px'}} className="img-fluid" alt="banking graphic" />)}
+         body={(<img src={BankPicWhite} style={{ padding: '20px'}} className="img-fluid" alt="banking graphic" />)}
         />
      );
 }

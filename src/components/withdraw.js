@@ -16,25 +16,33 @@ function Withdraw() {
     console.log(data);
     console.log(ctx);
 
-     function validate(number) {
-        if(isNaN(number)) { 
+     function validate(num) {
+        if(isNaN(num)) { 
             setStatus('Error: Please enter a valid number');
-            setTimeout(() => setStatus(''), 3000);
+            setTimeout(() => setStatus(''), 2000);
             return false;
         }
         return true;
     }
 
+    function overdraft(num){
+        if(num > data){
+            alert('You do not have enough money in your account to withdraw that amount.');
+            // setStatus('Transaction failed');
+            // setTimeout(() => setStatus(''), 2000);
+            clearForm();
+            return false 
+        }
+        return true;
+    }
 
     function handleWithdrawal(amount) {
         console.log(amount);
-        if(!validate(amount))
+        if((!validate(amount)) || (!overdraft(amount)))
         return;
         setBalance(data - amount);
-        //setStatus; --breaks when I have this 
         ctx.users[ctx.users.length -1].balance -= Number(amount);
         console.log(ctx.users.balance)
-        // ctx.users.push({withdraw});
         setShow(false);
     }
 
@@ -74,7 +82,11 @@ function Withdraw() {
                 <h5>Success!</h5>
                 Current Balance: ${data} <br />
                 <br />
-                <button type="submit" className="btn btn-light" onClick={clearForm}>Make another withdrawal</button>
+                <button 
+                type="submit" 
+                className="btn btn-light" 
+                onClick={clearForm}
+                >Make another withdrawal</button>
                 </>
             )
          }
