@@ -48,6 +48,8 @@ body {
   align-items: center;
   margin-left: 120px;
   text-align: center;
+  /* border: 5px solid rgb(237, 238, 245); */
+  border-radius: 30px;
 }
 
 .card-header {
@@ -90,5 +92,6 @@ body {
   text-align: center;
   width: 600px;
   border: 5px solid rgb(140, 199, 98);
+
 }
 
