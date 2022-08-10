@@ -26,7 +26,7 @@ function Withdraw() {
     }
 
     function overdraft(num){
-        if(num > data){
+        if(Number(num) > data){
             alert('You do not have enough money in your account to withdraw that amount.');
             // setStatus('Transaction failed');
             // setTimeout(() => setStatus(''), 2000);
