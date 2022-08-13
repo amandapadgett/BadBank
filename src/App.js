@@ -17,11 +17,12 @@ function App() {
       <NavBar/>
         <UserContext.Provider value={{users:[{name:'Amanda Padgett',email:'amanda@test.net', password:'secret123', balance:0}]}}>
          <Routes>
-            <Route path='/' element={ <Home /> } />
-            <Route path='/withdraw' element={ <Withdraw /> } />
-            <Route path='/deposit' element={ <Deposit /> } />
-            <Route path='/alldata' element={ <AllData /> } />
-            <Route path='/createaccount' element={ <CreateAccount /> } />
+            <Route path="/" exact element={<Home />} />
+            <Route path='home' element={ <Home /> } />
+            <Route path='withdraw' element={ <Withdraw /> } />
+            <Route path='deposit' element={ <Deposit /> } />
+            <Route path='alldata' element={ <AllData /> } />
+            <Route path='createaccount' element={ <CreateAccount /> } />
             </Routes>   
         </UserContext.Provider> 
       </BrowserRouter>
