@@ -16,7 +16,8 @@ function Deposit() {
     function validate(number) {
         if(isNaN(number) ) {
             alert('Please enter a valid number')
-            setStatus('Please enter a valid number')
+            // setStatus('Please enter a valid number')
+            setDeposit('');
             return false;
         }
         return true;
@@ -24,7 +25,8 @@ function Deposit() {
 
     function negativeNum(num){
         if(num < 0) {
-            alert('Deposit amount cannot be negative')
+            alert('Deposit amount cannot be negative');
+            setDeposit('');
             return false;
             
         }
@@ -41,6 +43,7 @@ function Deposit() {
         ctx.users[ctx.users.length - 1].balance += Number(amount);
         console.log(ctx.users.balance)
         setShow(false);
+       
                 
     }
 
@@ -51,12 +54,13 @@ function Deposit() {
 
     return (
         <Card 
-         bgcolor="success"
-         txtcolor="white"
-         header="Deposits"
-         title="Make a Deposit"
-        body={show ?  <> 
-            Current Balance: ${data} <br />
+        bgcolor="success"
+        txtcolor="white"
+        header="Deposits"
+        title="Enter amount below to deposit money into your account"
+        body={  
+        show ?  <> 
+        Current Balance: ${data} <br />
             
       <br/>
         <input 
@@ -65,7 +69,8 @@ function Deposit() {
             id="deposit" 
             placeholder="Enter Amount"
             value={deposit}
-            onChange={e => setDeposit(e.currentTarget.value)} /> <br/>
+            onChange={e => setDeposit(e.currentTarget.value)} /> 
+            <br/>
             <button 
             type="submit" 
             className="btn btn-light" 
@@ -73,13 +78,14 @@ function Deposit() {
             onClick={() => handleDeposit(deposit)} >Submit Deposit</button>
         
         </>  :  <>
+
         <h5>Deposit was successful!</h5>
         <h6> Current Balance: ${Number(data)}</h6>
         <br />
         <button 
-        type="submit" 
-        className="btn btn-light" 
-        onClick={clearForm} > Make another deposit</button>
+            type="submit" 
+            className="btn btn-light" 
+            onClick={clearForm} > Make another deposit</button>
         </>
         }
         />

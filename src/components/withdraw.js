@@ -17,10 +17,11 @@ function Withdraw() {
     console.log(ctx);
 
      function validate(num) {
-        if(isNaN(num)) { 
-            setStatus('Error: Please enter a valid number');
-            setTimeout(() => setStatus(''), 2000);
+        if(isNaN(num) || num < 0) { 
+            alert('Please enter a valid number');
+            setWithdraw('');
             return false;
+            
         }
         return true;
     }
@@ -28,8 +29,8 @@ function Withdraw() {
     function overdraft(num){
         if(Number(num) > data){
             alert('You do not have enough money in your account to withdraw that amount.');
-            // setStatus('Transaction failed');
-            // setTimeout(() => setStatus(''), 2000);
+            //setStatus('Transaction failed');
+            //setTimeout(() => setStatus(''), 2000);
             clearForm();
             return false 
         }
@@ -56,39 +57,39 @@ function Withdraw() {
          bgcolor="secondary"
          txtcolor="white"
          header="Withdrawals"
-         title="Make a Withdrawal"
+         title="Enter amount below to withdraw money from your account"
          status={status} 
          body={
-            show ? (
-                <>
-                Current Balance: ${data} <br />
-                <br />
-                <input 
-                type="input" 
-                className="form-control"
-                id="withdraw"
-                placeholder="Enter Amount"
-                value={withdraw}
-                onChange={e => setWithdraw(e.currentTarget.value)} />
-                <br/>
-                <button 
-                type="submit"
-                className="btn btn-light"
-                disabled={withdraw === '' || withdraw < 0}
-                onClick={() => handleWithdrawal(withdraw)}>Withdraw</button>
-                </>
-            ) : (
-                <>
-                <h5>Success!</h5>
-                Current Balance: ${data} <br />
-                <br />
-                <button 
-                type="submit" 
-                className="btn btn-light" 
-                onClick={clearForm}
-                >Make another withdrawal</button>
-                </>
-            )
+            show ? ( <>
+            Current Balance: ${data} <br />
+            <br />
+            <input 
+            type="input" 
+            className="form-control"
+            id="withdraw"
+            placeholder="Enter Amount"
+            value={withdraw}
+            onChange={e => setWithdraw(e.currentTarget.value)} />
+            <br/>
+
+            <button 
+            type="submit"
+            className="btn btn-light"
+            disabled={withdraw === ''}
+            onClick={() => handleWithdrawal(withdraw)}>Withdraw</button>
+               
+            </> ) : (  <>
+           
+            <h5>Success!</h5>
+            Current Balance: ${data} <br />
+            <br />
+            <button 
+            type="submit" 
+            className="btn btn-light" 
+            onClick={clearForm}
+            >Make another withdrawal</button>
+            
+            </> )
          }
        
         />

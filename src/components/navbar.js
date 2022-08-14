@@ -25,14 +25,15 @@ function NavBar() {
                 aria-controls="navbarNav" 
                 aria-expanded="false" 
                 aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-            </button>
+                <span className="navbar-toggler-icon"></span>
+                </button>
 
             <div className="collapse navbar-collapse" id="navbarNav" >
 
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                    <NavLink  to='/' 
+                    <NavLink  
+                    to='/' 
                     style={navLinkStyles} 
                     className="nav-link" 
                     aria-current="page"
@@ -41,7 +42,8 @@ function NavBar() {
                     </li>
 
                     <li className="nav-item">
-                        <NavLink to='/createaccount/' 
+                        <NavLink 
+                        to='/createaccount/' 
                         style={navLinkStyles} 
                         className="nav-link" 
                         >Create Account</NavLink>
@@ -49,7 +51,8 @@ function NavBar() {
                     </li>
 
                     <li className="nav-item">
-                        <NavLink to="/deposit/" 
+                        <NavLink 
+                        to="/deposit/" 
                         style={navLinkStyles} 
                         className="nav-link"
                         >Deposit</NavLink>
@@ -57,7 +60,8 @@ function NavBar() {
                     </li>
 
                     <li className="nav-item">
-                        <NavLink  to="/withdraw/" 
+                        <NavLink  
+                        to="/withdraw/" 
                         className="nav-link"
                         style={navLinkStyles}
                         >Withdraw</NavLink>
@@ -65,7 +69,8 @@ function NavBar() {
                     </li>
 
                     <li className="nav-item">
-                        <NavLink to="/alldata/" 
+                        <NavLink 
+                        to="/alldata/" 
                         style={navLinkStyles} 
                         className="nav-link"
                         >All Data</NavLink>
