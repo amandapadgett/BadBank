@@ -4,6 +4,7 @@ body {
   margin-top: 0px;
   font-size: 16px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
 
 .navbar-nav li {
@@ -38,9 +39,10 @@ body {
 
 .navbar {
   margin-bottom: 50px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-bottom: rgb(140, 178, 145) solid 5px ;
 }
 
 .card {
@@ -49,13 +51,37 @@ body {
   align-items: center;
   margin-left: 120px;
   text-align: center;
+  
   /* border: 5px solid rgb(237, 238, 245); */
   /* border-radius: 30px; */
   
 }
 
 .card-header {
-  font-size: 20px;
+  font-size: 18px;
+  /* border: #fff */
+}
+
+.card-body {
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.btn .nav-link {
+  color:rgb(192, 235, 193);
+}
+
+.btn-primary {
+  background-color: #c21169dd!important;
+}
+
+.btn-info {
+  background-color: rgba(57, 167, 187, 0.731);
+  border: 2px solid rgba(116, 228, 228, 0.747)
 }
 
 
@@ -71,7 +97,7 @@ body {
   background-color: #7b71ad!important;
 }
 
-.nav-link .navToolTip {
+/* .nav-link .navToolTip {
   position: absolute;
   bottom: 75px;
   left: 0;
@@ -84,7 +110,7 @@ body {
   letter-spacing: 3px;
   color: #ff0d0d;
   font-weight: bold;
-}
+} */
 
 .table {
   padding: 10px;
@@ -94,6 +120,7 @@ body {
   text-align: center;
   width: 500px;
   border: 5px solid rgb(140, 199, 98);
+  font-size: 14px;
 
 }
 

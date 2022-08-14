@@ -29,8 +29,8 @@ function Withdraw() {
     function overdraft(num){
         if(Number(num) > data){
             alert('You do not have enough money in your account to withdraw that amount.');
-            //setStatus('Transaction failed');
-            //setTimeout(() => setStatus(''), 2000);
+            setStatus('Transaction failed');
+            setTimeout(() => setStatus(''), 2000);
             clearForm();
             return false 
         }
@@ -56,11 +56,12 @@ function Withdraw() {
         <Card 
          bgcolor="secondary"
          txtcolor="white"
-         header="Withdrawals"
-         title="Enter amount below to withdraw money from your BadBank account."
+         header="WITHDRAWALS"
+         title="Enter an amount below to withdraw money from your BadBank account."
          status={status} 
          body={
             show ? ( <>
+            ------------ <br />
             Current Balance: ${data} <br />
             <br />
             <input 
@@ -76,7 +77,7 @@ function Withdraw() {
             type="submit"
             className="btn btn-light"
             disabled={withdraw === ''}
-            onClick={() => handleWithdrawal(withdraw)}>Withdraw</button>
+            onClick={() => handleWithdrawal(withdraw)}>Submit Withdrawal</button>
                
             </> ) : (  <>
            

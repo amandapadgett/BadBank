@@ -56,26 +56,27 @@ function Deposit() {
         <Card 
         bgcolor="success"
         txtcolor="white"
-        header="Deposits"
+        header="DEPOSITS"
         title="Enter an amount below to deposit money into your BadBank account."
         body={  
         show ?  <> 
+        ------------ <br />
         Current Balance: ${data} <br />
             
-      <br/>
+        <br/>
         <input 
-            type="input" 
-            className="form-control" 
-            id="deposit" 
-            placeholder="Enter Amount"
-            value={deposit}
-            onChange={e => setDeposit(e.currentTarget.value)} /> 
-            <br/>
-            <button 
-            type="submit" 
-            className="btn btn-light" 
-            disabled={deposit === '' || deposit === 0}
-            onClick={() => handleDeposit(deposit)} >Submit Deposit</button>
+        type="input" 
+        className="form-control" 
+        id="deposit" 
+        placeholder="Enter Amount"
+        value={deposit}
+        onChange={e => setDeposit(e.currentTarget.value)} /> 
+        <br/>
+        <button 
+        type="submit" 
+        className="btn btn-light" 
+        disabled={deposit === '' || deposit === 0}
+        onClick={() => handleDeposit(deposit)} >Submit Deposit</button>
         
         </>  :  <>
 
@@ -83,9 +84,9 @@ function Deposit() {
         <h6> Current Balance: ${Number(data)}</h6>
         <br />
         <button 
-            type="submit" 
-            className="btn btn-light" 
-            onClick={clearForm} > Make another deposit</button>
+        type="submit" 
+        className="btn btn-light" 
+        onClick={clearForm} > Make another deposit</button>
         </>
         }
         />
