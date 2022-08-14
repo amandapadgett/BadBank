@@ -47,7 +47,7 @@ function NavBar() {
                         style={navLinkStyles} 
                         className="nav-link" 
                         >Create Account</NavLink>
-                        <span>Create New Account</span>
+                        <span>Create an Account</span>
                     </li>
 
                     <li className="nav-item">
@@ -74,7 +74,7 @@ function NavBar() {
                         style={navLinkStyles} 
                         className="nav-link"
                         >All Data</NavLink>
-                        <span>View AllData</span>
+                        <span>View All Bank Data</span>
                     </li>
                     
                     {/* <li className="nav-item">

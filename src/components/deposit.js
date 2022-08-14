@@ -57,7 +57,7 @@ function Deposit() {
         bgcolor="success"
         txtcolor="white"
         header="Deposits"
-        title="Enter amount below to deposit money into your account"
+        title="Enter an amount below to deposit money into your BadBank account."
         body={  
         show ?  <> 
         Current Balance: ${data} <br />

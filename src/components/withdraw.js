@@ -57,7 +57,7 @@ function Withdraw() {
          bgcolor="secondary"
          txtcolor="white"
          header="Withdrawals"
-         title="Enter amount below to withdraw money from your account"
+         title="Enter amount below to withdraw money from your BadBank account."
          status={status} 
          body={
             show ? ( <>

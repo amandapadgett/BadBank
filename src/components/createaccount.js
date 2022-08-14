@@ -65,7 +65,7 @@ function CreateAccount() {
         bgcolor="primary"
         txtcolor="white"
         header="Create Account"
-        title="Complete the fields to create a new account"
+        title="Complete the fields to create a new account."
         status={status}
         body={show ? ( <>
 
