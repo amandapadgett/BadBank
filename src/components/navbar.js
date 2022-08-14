@@ -47,7 +47,7 @@ function NavBar() {
                             style={navLinkStyles} 
                             className="nav-link" 
                             >Create Account</NavLink>
-                            <span>Create an Account</span>
+                            <span>Create a Bank Account</span>
                         </li>
 
                         <li className="nav-item">
